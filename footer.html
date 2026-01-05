@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVS Batteries - Professional Footer</title>
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-dark: #0f5132;
+        --primary-green: #198754;
+        --accent-green: #20c997;
+        --light-green: #e9f7ef;
+        --text-light: #ffffff;
+        --text-muted: #d1d1d1;
+        --footer-bg: #0a2b1c;
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+      }
+
+      /* Footer Container */
+      .main-footer {
+        background-color: var(--footer-bg);
+        color: var(--text-light);
+        padding: 60px 0 0 0;
+        position: relative;
+        overflow: hidden;
+        opacity: 0; /* For JS fade-in */
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .main-footer.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      /* Responsive Grid Breakdown */
+      @media (min-width: 768px) {
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .footer-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      /* Logo Section */
+      .footer-logo-section img {
+        max-width: 180px;
+        height: auto;
+        margin-bottom: 15px;
+        /* Makes placeholder/logo white if needed */
+      }
+
+      .tagline {
+        font-size: 0.95rem;
+        color: var(--accent-green);
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      /* Common Heading Style */
+      .footer-heading {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-heading::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+        height: 3px;
+        background: var(--accent-green);
+        border-radius: 2px;
+      }
+
+      /* Quick Links */
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 12px;
+      }
+
+      .footer-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: var(--transition);
+        display: inline-block;
+      }
+
+      .footer-links a:hover {
+        color: var(--accent-green);
+        transform: translateX(5px);
+      }
+
+      /* Contact Section */
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .contact-item i {
+        color: var(--accent-green);
+        margin-top: 5px;
+        width: 20px;
+      }
+
+      .contact-item:hover {
+        color: var(--text-light);
+      }
+
+      .address-text {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      /* Social Media Icons */
+      .social-icons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .social-btn {
+        width: 45px;
+        height: 45px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: var(--transition);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .social-btn:hover {
+        transform: scale(1.15);
+        background: var(--primary-green);
+        box-shadow: 0 0 15px var(--accent-green);
+        color: white;
+      }
+
+      /* Bottom Bar */
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 25px 0;
+        text-align: center;
+        background: #051a11;
+      }
+
+      .maintainer-link {
+        text-decoration: none;
+        font-weight: 700;
+        display: inline-block;
+        background: linear-gradient(
+          to right,
+          #ff0000,
+          #ff7f00,
+          #ffff00,
+          #00ff00,
+          #0000ff,
+          #4b0082,
+          #8b00ff,
+          #ff0000
+        );
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: rainbow 3s linear infinite;
+      }
+
+      @keyframes rainbow {
+        to {
+          background-position: 200% center;
+        }
+      }
+
+      .copyright-text {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+
+      /* Mobile Adjustments */
+      @media (max-width: 480px) {
+        .main-footer {
+          padding-top: 40px;
+          text-align: center;
+        }
+
+        .footer-heading::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .contact-item {
+          justify-content: center;
+        }
+
+        .social-icons {
+          justify-content: center;
+        }
+
+        .footer-links a:hover {
+          transform: translateY(-3px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Content spacer to show scroll/reveal effect -->
+    <div
+      style="
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #666;
+      "
+    >
+      <p>Scroll down to see the SVS Batteries Footer</p>
+    </div>
+
+    <footer class="main-footer" id="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- 1. Logo & Tagline -->
+          <div class="footer-logo-section">
+            <!-- Placeholder for logo -->
+            <img
+              src="./assets/LOGO.png"
+              alt="SVS Batteries Logo"
+              onerror="this.src='https://placehold.co/200x80/198754/FFFFFF?text=SVS+BATTERIES'"
+            />
+            <p class="tagline">Reliable Battery Sales & Services</p>
+          </div>
+
+          <!-- 2. Quick Links -->
+          <div class="footer-links-section">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="./index.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> Home</a
+                >
+              </li>
+              <li>
+                <a href="./product.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> Products</a
+                >
+              </li>
+              <li>
+                <a href="./service.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> Services</a
+                >
+              </li>
+              <li>
+                <a href="./about.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> About Us</a
+                >
+              </li>
+              <li>
+                <a href="./faq.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> FAQs</a
+                >
+              </li>
+              <li>
+                <a href="./contact2.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- 3. Contact & Address -->
+          <div class="footer-contact-section">
+            <h3 class="footer-heading">Contact Us</h3>
+            <div class="contact-info">
+              <div
+                class="contact-item"
+                style="font-weight: bold; color: var(--text-light)"
+              >
+                SVS BATTERIES
+              </div>
+              <a href="mailto:prathapae1997@gmail.com" class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span class="address-text">prathapae1997@gmail.com</span>
+              </a>
+              <a href="tel:+918748826374" class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span class="address-text">+91 8748826374</span>
+              </a>
+              <a href="tel:+918549837988" class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span class="address-text">+91 8549837988</span>
+              </a>
+              <div class="contact-item">
+                <i class="fas fa-location-dot"></i>
+                <span class="address-text">
+                  #1028/A, 14th Main, Near Maruthi Circle,<br />
+                  Hanumanthanagar, Bengaluru – 560050
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Social Media -->
+          <div class="footer-social-section">
+            <h3 class="footer-heading">Follow Us</h3>
+            <div class="social-icons">
+              <a
+                href="https://www.facebook.com/share/1B6p9JFNrp/?mibextid=wwXIfr"
+                class="social-btn"
+                aria-label="Facebook"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://wa.me/918748826374"
+                class="social-btn"
+                aria-label="WhatsApp"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/svs_batteries/?igsh=MXY3cjUwNjYxNDdqNg%3D%3D&utm_source=qr#"
+                class="social-btn"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.youtube.com/@svsbatteries"
+                class="social-btn"
+                aria-label="YouTube"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Footer Bar -->
+      <div class="footer-bottom">
+        <div class="container">
+          <p class="copyright-text">
+            &copy; <span id="year"></span> SVS Batteries. All Rights Reserved. |
+            Designed & Maintained by
+            <a
+              href="https://www.arouza.com"
+              target="_blank"
+              class="maintainer-link"
+              >AROUZA TECHLABS</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Update current year automatically
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Intersection Observer for fade-in effect
+      document.addEventListener("DOMContentLoaded", () => {
+        const footer = document.getElementById("footer");
+
+        const observerOptions = {
+          threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        observer.observe(footer);
+      });
+    </script>
+  </body>
+</html>

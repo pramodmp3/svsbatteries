@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQs | SVS Battery</title>
+
+    <link rel="stylesheet" href="./faq.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="./index.html" class="logo-link">
+        <div class="logo-img"><img src="./assets/LOGO.png" alt="" /></div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-links-desktop" aria-label="Main Navigation Desktop">
+        <ul class="nav-list-desktop">
+          <li class="nav-item-desktop">
+            <a href="./index.html" class="nav-link-desktop">HOME</a>
+            <!-- <ul class="dropdown-desktop">
+              <li><a href="./index.html">HOME1</a></li>
+            </ul> -->
+          </li>
+          <li class="nav-item-desktop">
+            <a href="./product.html" class="nav-link-desktop">PRODUCTS</a>
+          </li>
+          <li class="nav-item-desktop">
+            <a href="./service.html" class="nav-link-desktop">SERVICES</a>
+          </li>
+
+          <li class="nav-item-desktop">
+            <a href="./about.html" class="nav-link-desktop">ABOUT US</a>
+          </li>
+          <li class="nav-item-desktop">
+            <a href="./faq.html" class="nav-link-desktop">FAQs</a>
+          </li>
+          <li class="nav-item-desktop shop-btn-desktop">
+            <a href="./contact2.html" class="shop-btn-link">CONTACT</a>
+          </li>
+          <li class="nav-item-desktop shop-btn-desktop">
+            <a href="./shop.html" class="shop-btn-link">SHOP</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button
+        class="menu-toggle"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        aria-label="Toggle Navigation"
+      >
+        <span class="menu-toggle-line"></span>
+        <span class="menu-toggle-line"></span>
+        <span class="menu-toggle-line"></span>
+      </button>
+    </header>
+    <!-- Mobile Slide-in Navigation -->
+    <nav id="mobile-menu" class="nav-mobile" aria-label="Mobile Navigation">
+      <ul class="nav-list-mobile">
+        <li class="nav-item-mobile">
+          <a
+            class="nav-link-mobile dropdown-toggle"
+            data-dropdown="home-dropdown"
+            role="button"
+            aria-expanded="false"
+            aria-controls="home-dropdown"
+            href="./index.html"
+          >
+            HOME
+            <!-- <span class="dropdown-arrow"></span> -->
+          </a>
+          <!-- <ul id="home-dropdown" class="dropdown-mobile">
+            <li><a href="./index.html">HOME1</a></li>
+          </ul> -->
+        </li>
+
+        <li class="nav-item-mobile">
+          <a href="./product.html" class="nav-link-mobile">PRODUCTS</a>
+        </li>
+
+        <li class="nav-item-mobile">
+          <a href="./service.html" class="nav-link-mobile">SERVICES</a>
+        </li>
+
+        <li class="nav-item-mobile">
+          <a href="./about.html" class="nav-link-mobile">ABOUT US</a>
+        </li>
+
+        <li class="nav-item-mobile">
+          <a href="./faq.html" class="nav-link-mobile">FAQs</a>
+        </li>
+        <li class="nav-item-mobile">
+          <a href="./contact2.html" class="shop-btn-mobile">CONTACT</a>
+        </li>
+        <li class="nav-item-mobile">
+          <a href="./shop.html" class="shop-btn-mobile">SHOP</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Overlay for closing the mobile menu -->
+    <div class="overlay"></div>
+    <div class="page-title">
+      <h1>Frequently Asked Questions</h1>
+      <p>
+        Everything you need to know about SVS Battery products, usage,
+        maintenance, warranty, and services.
+      </p>
+    </div>
+
+    <div class="faq-container" id="faqContainer"></div>
+    <footer class="main-footer" id="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- 1. Logo & Tagline -->
+          <div class="footer-logo-section">
+            <!-- Placeholder for logo -->
+            <img
+              src="./assets/LOGO.png"
+              alt="SVS Batteries Logo"
+              onerror="this.src='https://placehold.co/200x80/198754/FFFFFF?text=SVS+BATTERIES'"
+            />
+            <p class="tagline">Reliable Battery Sales & Services</p>
+          </div>
+
+          <!-- 2. Quick Links -->
+          <div class="footer-links-section">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="./index.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> Home</a
+                >
+              </li>
+              <li>
+                <a href="./product.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> Products</a
+                >
+              </li>
+              <li>
+                <a href="./service.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> Services</a
+                >
+              </li>
+              <li>
+                <a href="./about.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> About Us</a
+                >
+              </li>
+              <li>
+                <a href="./faq.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> FAQs</a
+                >
+              </li>
+              <li>
+                <a href="./contact2.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- 3. Contact & Address -->
+          <div class="footer-contact-section">
+            <h3 class="footer-heading">Contact Us</h3>
+            <div class="contact-info">
+              <div
+                class="contact-item"
+                style="font-weight: bold; color: var(--text-light)"
+              >
+                SVS BATTERIES
+              </div>
+              <a href="mailto:prathapae1997@gmail.com" class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span class="address-text">prathapae1997@gmail.com</span>
+              </a>
+              <a href="tel:+918748826374" class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span class="address-text">+91 8748826374</span>
+              </a>
+              <a href="tel:+918549837988" class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span class="address-text">+91 8549837988</span>
+              </a>
+              <div class="contact-item">
+                <i class="fas fa-location-dot"></i>
+                <span class="address-text">
+                  #1028/A, 14th Main, Near Maruthi Circle,<br />
+                  Hanumanthanagar, Bengaluru – 560050
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Social Media -->
+          <div class="footer-social-section">
+            <h3 class="footer-heading">Follow Us</h3>
+            <div class="social-icons">
+              <a
+                href="https://www.facebook.com/share/1B6p9JFNrp/?mibextid=wwXIfr"
+                class="social-btn"
+                aria-label="Facebook"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://wa.me/918748826374"
+                class="social-btn"
+                aria-label="WhatsApp"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/svs_batteries/?igsh=MXY3cjUwNjYxNDdqNg%3D%3D&utm_source=qr#"
+                class="social-btn"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.youtube.com/@svsbatteries"
+                class="social-btn"
+                aria-label="YouTube"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Footer Bar -->
+      <div class="footer-bottom">
+        <div class="container">
+          <p class="copyright-text">
+            &copy; <span id="year"></span> SVS Batteries. All Rights Reserved. |
+            Designed & Maintained by
+            <a
+              href="https://www.arouza.com"
+              target="_blank"
+              class="maintainer-link"
+              >AROUZA TECHLABS</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="./nav2.js"></script>
+    <script src="./footer2.js"></script>
+    <script>
+      const faqs = [
+        // GENERAL (1–10)
+        [
+          "What products does SVS Battery sell?",
+          "SVS Battery sells automotive batteries, inverter batteries, industrial batteries, UPS batteries, and solar batteries.",
+        ],
+        [
+          "Are SVS batteries suitable for Indian weather conditions?",
+          "Yes, all SVS batteries are designed to perform efficiently in Indian climatic conditions.",
+        ],
+        [
+          "Do you sell original branded batteries?",
+          "Yes, we deal only in genuine and certified battery products.",
+        ],
+        [
+          "Do you provide battery installation?",
+          "Yes, professional installation services are available.",
+        ],
+        [
+          "Can I buy batteries in bulk?",
+          "Yes, we offer bulk sales for commercial and industrial customers.",
+        ],
+        [
+          "Do you provide batteries for commercial vehicles?",
+          "Yes, we supply batteries for trucks, buses, and heavy vehicles.",
+        ],
+        [
+          "Are SVS batteries environmentally friendly?",
+          "We follow eco-friendly manufacturing and recycling standards.",
+        ],
+        [
+          "Do you sell inverter batteries?",
+          "Yes, we offer tall tubular and flat plate inverter batteries.",
+        ],
+        [
+          "Do you provide solar batteries?",
+          "Yes, we supply high-capacity solar batteries.",
+        ],
+        [
+          "Do you offer battery recycling?",
+          "Yes, we responsibly recycle old and used batteries.",
+        ],
+
+        // WARRANTY & SUPPORT (11–20)
+        [
+          "What is the warranty period?",
+          "Warranty varies by battery type, typically ranging from 12 to 60 months.",
+        ],
+        [
+          "How can I claim warranty?",
+          "Warranty can be claimed by presenting the invoice and warranty card.",
+        ],
+        [
+          "Is on-site warranty support available?",
+          "Yes, on-site support is available for selected products.",
+        ],
+        [
+          "Does warranty cover physical damage?",
+          "No, physical or accidental damage is not covered.",
+        ],
+        ["Is warranty transferable?", "Warranty is usually non-transferable."],
+        [
+          "Do you provide replacement during warranty?",
+          "Yes, replacement is provided as per warranty terms.",
+        ],
+        [
+          "How long does warranty service take?",
+          "Typically 24–72 hours depending on issue severity.",
+        ],
+        [
+          "Is warranty applicable for overcharging?",
+          "No, damage due to improper charging is excluded.",
+        ],
+        [
+          "Does inverter misuse void warranty?",
+          "Yes, misuse or incompatible inverter usage voids warranty.",
+        ],
+        [
+          "Is warranty valid without invoice?",
+          "Invoice is mandatory for warranty claims.",
+        ],
+
+        // USAGE & MAINTENANCE (21–40)
+        [
+          "How often should I check battery water level?",
+          "Once every 2–3 months for lead-acid batteries.",
+        ],
+        [
+          "Can I use normal water in batteries?",
+          "No, only distilled water should be used.",
+        ],
+        [
+          "How long does a battery last?",
+          "Average life is 3–5 years depending on usage.",
+        ],
+        [
+          "What causes battery failure?",
+          "Overcharging, deep discharge, poor maintenance, and heat.",
+        ],
+        [
+          "Can I leave battery unused for long periods?",
+          "Periodic charging is recommended to prevent damage.",
+        ],
+        [
+          "What is deep discharge?",
+          "It means draining battery beyond safe voltage levels.",
+        ],
+        [
+          "How to increase battery life?",
+          "Avoid overcharging, deep discharge, and ensure proper ventilation.",
+        ],
+        [
+          "Can I connect batteries in series?",
+          "Yes, but it must be done as per voltage requirements.",
+        ],
+        [
+          "Is battery heating normal?",
+          "Slight warmth is normal; excessive heat is not.",
+        ],
+        [
+          "How do I know battery is fully charged?",
+          "Most inverters indicate full charge status.",
+        ],
+        [
+          "Should batteries be placed indoors?",
+          "They should be placed in well-ventilated areas.",
+        ],
+        [
+          "Does dust affect battery life?",
+          "Yes, dust buildup can cause terminal corrosion.",
+        ],
+        [
+          "Can battery terminals rust?",
+          "Yes, regular cleaning prevents corrosion.",
+        ],
+        [
+          "What is battery sulfation?",
+          "It is lead sulfate buildup that reduces capacity.",
+        ],
+        [
+          "Can sulfation be reversed?",
+          "Mild sulfation can be reduced with proper charging.",
+        ],
+        [
+          "Does temperature affect battery performance?",
+          "Yes, extreme temperatures reduce efficiency.",
+        ],
+        [
+          "Can I use the battery immediately after purchase?",
+          "Yes, batteries are supplied ready to use.",
+        ],
+        [
+          "Is inverter battery different from car battery?",
+          "Yes, they are designed for different discharge cycles.",
+        ],
+        [
+          "How much backup can I expect?",
+          "Backup depends on battery capacity and load.",
+        ],
+        [
+          "What happens if battery is overloaded?",
+          "It reduces life and may cause failure.",
+        ],
+
+        // SALES & DELIVERY (41–55)
+        ["Do you offer home delivery?", "Yes, home delivery is available."],
+        [
+          "Is same-day delivery possible?",
+          "Yes, subject to stock availability.",
+        ],
+        [
+          "Do you offer exchange offers?",
+          "Yes, old battery exchange is available.",
+        ],
+        [
+          "How is exchange value calculated?",
+          "Based on battery condition, age, and capacity.",
+        ],
+        [
+          "Can I order batteries online?",
+          "Currently orders are accepted via phone and visit.",
+        ],
+        ["Do you provide GST invoice?", "Yes, GST invoices are provided."],
+        [
+          "Are prices negotiable for bulk orders?",
+          "Yes, bulk pricing is available.",
+        ],
+        [
+          "Do you supply batteries outside Bangalore?",
+          "Yes, depending on quantity.",
+        ],
+        [
+          "Are batteries tested before delivery?",
+          "Yes, all batteries are quality tested.",
+        ],
+        ["Can I cancel an order?", "Yes, before dispatch."],
+        [
+          "Is installation charged separately?",
+          "Installation is usually complimentary.",
+        ],
+        [
+          "Do you provide demo after installation?",
+          "Yes, proper usage guidance is given.",
+        ],
+        [
+          "What payment modes are accepted?",
+          "Cash, UPI, cards, and bank transfer.",
+        ],
+        [
+          "Do you provide EMI options?",
+          "EMI options depend on product and bank.",
+        ],
+        [
+          "Do you sell directly to factories?",
+          "Yes, industrial supply is available.",
+        ],
+
+        // TECHNICAL (56–80)
+        ["What is Ah rating?", "It indicates battery capacity."],
+        [
+          "What battery capacity do I need?",
+          "It depends on load and backup requirement.",
+        ],
+        ["What is C-rating?", "It indicates discharge rate capability."],
+        [
+          "Is higher Ah always better?",
+          "Not always; it must match inverter capacity.",
+        ],
+        [
+          "What is float charging?",
+          "Continuous low-current charging to maintain battery.",
+        ],
+        ["Can I mix old and new batteries?", "Not recommended."],
+        [
+          "Do lithium batteries last longer?",
+          "Yes, they have higher life cycles.",
+        ],
+        [
+          "Are lithium batteries available?",
+          "Yes, selected models are available.",
+        ],
+        ["Do lithium batteries need water?", "No, they are maintenance-free."],
+        ["What is battery cycle life?", "Number of charge-discharge cycles."],
+        ["Can I upgrade battery later?", "Yes, if inverter supports it."],
+        ["Does inverter brand matter?", "Yes, compatibility matters."],
+        ["Can battery explode?", "Only under extreme misuse or short circuit."],
+        [
+          "What safety precautions should I follow?",
+          "Avoid sparks, ensure ventilation.",
+        ],
+        [
+          "Is battery backup affected by load?",
+          "Yes, higher load reduces backup.",
+        ],
+        [
+          "What is reserve capacity?",
+          "Time battery can supply power at specific load.",
+        ],
+        ["Do batteries lose capacity over time?", "Yes, gradually with usage."],
+        ["Can batteries be repaired?", "Minor issues can be serviced."],
+        [
+          "What certifications do SVS batteries have?",
+          "They comply with industry standards.",
+        ],
+        [
+          "Why choose SVS Battery?",
+          "Quality products, expert service, and reliable support.",
+        ],
+      ];
+
+      const container = document.getElementById("faqContainer");
+
+      faqs.forEach((faq, i) => {
+        const item = document.createElement("div");
+        item.className = "faq-item";
+        item.innerHTML = `
+    <div class="faq-question">
+      ${i + 1}. ${faq[0]}
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      <p>${faq[1]}</p>
+    </div>
+  `;
+        container.appendChild(item);
+      });
+
+      document.querySelectorAll(".faq-question").forEach((q) => {
+        q.addEventListener("click", () => {
+          q.parentElement.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>

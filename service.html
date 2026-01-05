@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | SVS Batteries</title>
+    <link rel="stylesheet" href="./service.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <a href="./index.html" class="logo-link">
+        <div class="logo-img"><img src="./assets/LOGO.png" alt="" /></div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-links-desktop" aria-label="Main Navigation Desktop">
+        <ul class="nav-list-desktop">
+          <li class="nav-item-desktop">
+            <a href="./index.html" class="nav-link-desktop">HOME</a>
+            <!-- <ul class="dropdown-desktop">
+              <li><a href="./index.html">HOME1</a></li>
+            </ul> -->
+          </li>
+          <li class="nav-item-desktop">
+            <a href="./product.html" class="nav-link-desktop">PRODUCTS</a>
+          </li>
+          <li class="nav-item-desktop">
+            <a href="./service.html" class="nav-link-desktop">SERVICES</a>
+          </li>
+
+          <li class="nav-item-desktop">
+            <a href="./about.html" class="nav-link-desktop">ABOUT US</a>
+          </li>
+          <li class="nav-item-desktop">
+            <a href="./faq.html" class="nav-link-desktop">FAQs</a>
+          </li>
+          <li class="nav-item-desktop shop-btn-desktop">
+            <a href="./contact2.html" class="shop-btn-link">CONTACT</a>
+          </li>
+          <li class="nav-item-desktop shop-btn-desktop">
+            <a href="./shop.html" class="shop-btn-link">SHOP</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button
+        class="menu-toggle"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        aria-label="Toggle Navigation"
+      >
+        <span class="menu-toggle-line"></span>
+        <span class="menu-toggle-line"></span>
+        <span class="menu-toggle-line"></span>
+      </button>
+    </header>
+    <!-- Mobile Slide-in Navigation -->
+    <nav id="mobile-menu" class="nav-mobile" aria-label="Mobile Navigation">
+      <ul class="nav-list-mobile">
+        <li class="nav-item-mobile">
+          <a
+            class="nav-link-mobile dropdown-toggle"
+            data-dropdown="home-dropdown"
+            role="button"
+            aria-expanded="false"
+            aria-controls="home-dropdown"
+            href="./index.html"
+          >
+            HOME
+            <!-- <span class="dropdown-arrow"></span> -->
+          </a>
+          <!-- <ul id="home-dropdown" class="dropdown-mobile">
+            <li><a href="./index.html">HOME1</a></li>
+          </ul> -->
+        </li>
+
+        <li class="nav-item-mobile">
+          <a href="./product.html" class="nav-link-mobile">PRODUCTS</a>
+        </li>
+
+        <li class="nav-item-mobile">
+          <a href="./service.html" class="nav-link-mobile">SERVICES</a>
+        </li>
+
+        <li class="nav-item-mobile">
+          <a href="./about.html" class="nav-link-mobile">ABOUT US</a>
+        </li>
+
+        <li class="nav-item-mobile">
+          <a href="./faq.html" class="nav-link-mobile">FAQs</a>
+        </li>
+        <li class="nav-item-mobile">
+          <a href="./contact2.html" class="shop-btn-mobile">CONTACT</a>
+        </li>
+        <li class="nav-item-mobile">
+          <a href="./shop.html" class="shop-btn-mobile">SHOP</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Overlay for closing the mobile menu -->
+    <div class="overlay"></div>
+    <!-- Intro / Hero Section -->
+    <header class="hero">
+      <h1>Our Services</h1>
+      <p>
+        Expert battery solutions and professional maintenance for every need.
+        Providing reliability and power since 2010.
+      </p>
+    </header>
+
+    <!-- Services Grid Section -->
+    <section class="services-section">
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card">
+          <div>
+            <span class="service-icon">&#9889;</span>
+            <h3>Battery Charging</h3>
+            <p>
+              Advanced controlled charging and deep discharging cycles to
+              restore battery health and capacity.
+            </p>
+          </div>
+          <a href="https://wa.me/918748826374" class="service-btn"
+            >Contact Us</a
+          >
+        </div>
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div>
+            <span class="service-icon">&#128663;</span>
+            <h3>Jump Start Service</h3>
+            <p>
+              On-site professional jump start assistance to get your vehicle
+              back on the road instantly.
+            </p>
+          </div>
+          <a href="https://wa.me/918748826374" class="service-btn"
+            >Contact Us</a
+          >
+        </div>
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div>
+            <span class="service-icon">&#128187;</span>
+            <h3>UPS Repair</h3>
+            <p>
+              Expert diagnostic and repair services for all major brands of Home
+              and Industrial UPS systems.
+            </p>
+          </div>
+          <a href="https://wa.me/918748826374" class="service-btn"
+            >Contact Us</a
+          >
+        </div>
+        <!-- Service 4 -->
+        <div class="service-card">
+          <div>
+            <span class="service-icon">&#128167;</span>
+            <h3>Water Replacement</h3>
+            <p>
+              Quality distilled water top-ups and acid level balancing for
+              improved battery longevity.
+            </p>
+          </div>
+          <a href="https://wa.me/918748826374" class="service-btn"
+            >Contact Us</a
+          >
+        </div>
+        <!-- Service 5 -->
+        <div class="service-card">
+          <div>
+            <span class="service-icon">&#128295;</span>
+            <h3>UPS Maintenance</h3>
+            <p>
+              Scheduled preventive maintenance to ensure your power backup works
+              when you need it most.
+            </p>
+          </div>
+          <a href="https://wa.me/918748826374" class="service-btn"
+            >Contact Us</a
+          >
+        </div>
+        <!-- Service 6 -->
+        <div class="service-card">
+          <div>
+            <span class="service-icon">&#128267;</span>
+            <h3>Inverter Service</h3>
+            <p>
+              Comprehensive servicing for inverters and batteries, ensuring
+              optimal conversion efficiency.
+            </p>
+          </div>
+          <a href="https://wa.me/918748826374" class="service-btn"
+            >Contact Us</a
+          >
+        </div>
+        <!-- Service 7 -->
+        <div class="service-card">
+          <div>
+            <span class="service-icon">&#129665;</span>
+            <h3>Health Check</h3>
+            <p>
+              Detailed load testing and specific gravity checks to determine the
+              real state of your battery.
+            </p>
+          </div>
+          <a href="https://wa.me/918748826374" class="service-btn"
+            >Contact Us</a
+          >
+        </div>
+        <!-- Service 8 -->
+        <div class="service-card">
+          <div>
+            <span class="service-icon">&#128680;</span>
+            <h3>Emergency Support</h3>
+            <p>
+              24/7 dedicated support for critical power failures and urgent
+              battery replacements.
+            </p>
+          </div>
+          <a href="https://wa.me/918748826374" class="service-btn"
+            >Contact Us</a
+          >
+        </div>
+        <!-- Service 9 -->
+        <div class="service-card">
+          <div>
+            <span class="service-icon">&#9850;</span>
+            <h3>Battery Replacement</h3>
+            <p>
+              Eco-friendly disposal of old batteries and heavy discounts on new,
+              high-performance units.
+            </p>
+          </div>
+          <a href="https://wa.me/918748826374" class="service-btn"
+            >Contact Us</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us">
+      <h2 class="section-title">Why Choose SVS Batteries?</h2>
+      <div class="why-us-container">
+        <div class="why-item">
+          <span>&#127881;</span>
+          <h4>15+ Years Experience</h4>
+          <p>Serving the community with specialized expertise since 2010.</p>
+        </div>
+        <div class="why-item">
+          <span>&#128104;&#8205;&#128295;</span>
+          <h4>Skilled Technicians</h4>
+          <p>
+            Our team is certified and trained in the latest battery
+            technologies.
+          </p>
+        </div>
+        <div class="why-item">
+          <span>&#9201;</span>
+          <h4>Quick Service</h4>
+          <p>
+            Fast turnaround times for repairs and immediate on-site support.
+          </p>
+        </div>
+        <div class="why-item">
+          <span>&#128178;</span>
+          <h4>Affordable Pricing</h4>
+          <p>
+            Transparent rates and genuine spare parts at the best market prices.
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer class="main-footer" id="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- 1. Logo & Tagline -->
+          <div class="footer-logo-section">
+            <!-- Placeholder for logo -->
+            <img
+              src="./assets/LOGO.png"
+              alt="SVS Batteries Logo"
+              onerror="this.src='https://placehold.co/200x80/198754/FFFFFF?text=SVS+BATTERIES'"
+            />
+            <p class="tagline">Reliable Battery Sales & Services</p>
+          </div>
+
+          <!-- 2. Quick Links -->
+          <div class="footer-links-section">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="./index.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> Home</a
+                >
+              </li>
+              <li>
+                <a href="./product.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> Products</a
+                >
+              </li>
+              <li>
+                <a href="./service.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> Services</a
+                >
+              </li>
+              <li>
+                <a href="./about.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> About Us</a
+                >
+              </li>
+              <li>
+                <a href="./faq.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> FAQs</a
+                >
+              </li>
+              <li>
+                <a href="./contact2.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- 3. Contact & Address -->
+          <div class="footer-contact-section">
+            <h3 class="footer-heading">Contact Us</h3>
+            <div class="contact-info">
+              <div
+                class="contact-item"
+                style="font-weight: bold; color: var(--text-light)"
+              >
+                SVS BATTERIES
+              </div>
+              <a href="mailto:prathapae1997@gmail.com" class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span class="address-text">prathapae1997@gmail.com</span>
+              </a>
+              <a href="tel:+918748826374" class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span class="address-text">+91 8748826374</span>
+              </a>
+              <a href="tel:+918549837988" class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span class="address-text">+91 8549837988</span>
+              </a>
+              <div class="contact-item">
+                <i class="fas fa-location-dot"></i>
+                <span class="address-text">
+                  #1028/A, 14th Main, Near Maruthi Circle,<br />
+                  Hanumanthanagar, Bengaluru – 560050
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Social Media -->
+          <div class="footer-social-section">
+            <h3 class="footer-heading">Follow Us</h3>
+            <div class="social-icons">
+              <a
+                href="https://www.facebook.com/share/1B6p9JFNrp/?mibextid=wwXIfr"
+                class="social-btn"
+                aria-label="Facebook"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://wa.me/918748826374"
+                class="social-btn"
+                aria-label="WhatsApp"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/svs_batteries/?igsh=MXY3cjUwNjYxNDdqNg%3D%3D&utm_source=qr#"
+                class="social-btn"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.youtube.com/@svsbatteries"
+                class="social-btn"
+                aria-label="YouTube"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Footer Bar -->
+      <div class="footer-bottom">
+        <div class="container">
+          <p class="copyright-text">
+            &copy; <span id="year"></span> SVS Batteries. All Rights Reserved. |
+            Designed & Maintained by
+            <a
+              href="https://www.arouza.com"
+              target="_blank"
+              class="maintainer-link"
+              >AROUZA TECHLABS</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="./nav2.js"></script>
+    <script src="./footer2.js"></script>
+    <script>
+      // Scroll-based fade-in animation
+      const revealCards = () => {
+        const cards = document.querySelectorAll(".service-card");
+        const windowHeight = window.innerHeight;
+        const revealPoint = 150;
+
+        cards.forEach((card) => {
+          const cardTop = card.getBoundingClientRect().top;
+          if (cardTop < windowHeight - revealPoint) {
+            card.classList.add("reveal");
+          }
+        });
+      };
+
+      // Initialize animation on load and scroll
+      window.addEventListener("scroll", revealCards);
+      window.addEventListener("load", revealCards);
+    </script>
+  </body>
+</html>

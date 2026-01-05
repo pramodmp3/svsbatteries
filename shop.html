@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choose Your Battery</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Poppins, sans-serif;
+      }
+      body {
+        background: #f4f6fb;
+        color: #0f172a;
+      }
+      :root {
+        --primary-blue: #0056b3;
+        --accent-red: #dc3545;
+        --success-green: #28a745;
+        --warning-orange: #fd7e14;
+        --light-bg: #f8f9fa;
+        --white: #ffffff;
+        --text-dark: #333;
+        --text-muted: #666;
+        --card-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      }
+      :root {
+        --primary-bg: #111122; /* Very Deep Indigo */
+        --secondary-bg: #070710; /* Near Black */
+        --accent-color: #8a2be2; /* Blue Violet */
+        --accent-glow: #8a2be280; /* Semi-transparent glow */
+        --accent-light: #a290e7; /* Lighter Violet */
+        --text-color: #f0f0f5; /* Off-white */
+        --clr-hamburger-dark-blue: #eaeaea; /* or any visible color */
+        --clr-mobile-dark-text: #000000;
+        --soft-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+        --glass-bg: rgba(138, 43, 226, 0.15); /* Stronger Glass */
+        --product-cta-color: #4caf50; /* Distinct Green for Products CTA */
+        --font-family: "Inter", sans-serif;
+        --transition-speed: 0.4s;
+      }
+      :root {
+        --primary-dark: #0f5132;
+        --primary-green: #198754;
+        --accent-green: #20c997;
+        --light-green: #e9f7ef;
+        --text-light: #ffffff;
+        --text-muted: #d1d1d1;
+        --footer-bg: #0a2b1c;
+        --transition: all 0.3s ease;
+      }
+      a {
+        text-decoration: none;
+        color: var(--text-color);
+      }
+      /* ---------------- HEADER (Animated Gradient) ---------------- */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+
+        /* Header Gradient */
+        /* background: linear-gradient(
+    135deg,
+    var(--accent-color),
+    var(--accent-light),
+    var(--text-color),
+    var(--accent-color)
+  ); */
+        background-color: green;
+        background-size: 300% 300%;
+        animation: headerGradient 12s ease infinite;
+
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05),
+          0 2px 4px -2px rgba(0, 0, 0, 0.05);
+        display: flex;
+        align-items: center;
+        padding: 0 5%;
+        z-index: 1000;
+      }
+
+      @keyframes headerGradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Logo Container */
+      .logo-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        gap: 10px;
+        z-index: 1001;
+      }
+
+      .logo-img {
+        width: 200px;
+        height: 120px;
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+
+      .logo-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      /* ---------------- DESKTOP NAVIGATION ---------------- */
+      .nav-links-desktop {
+        display: none;
+        margin-left: auto;
+      }
+
+      .nav-list-desktop {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+      }
+
+      .nav-item-desktop {
+        position: relative;
+      }
+
+      /* Base Link Color: Black */
+      .nav-link-desktop {
+        display: flex;
+        align-items: center;
+        line-height: 1;
+        color: var(--text-color);
+        font-weight: 900;
+      }
+
+      /* Dropdown caret */
+      .nav-item-desktop[aria-haspopup="true"] > .nav-link-desktop {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .nav-item-desktop[aria-haspopup="true"] > .nav-link-desktop::after {
+        content: "\25BE";
+        font-size: 0.8rem;
+        line-height: 1;
+        color: var(--accent-light);
+        transition: transform var(--transition-speed) ease,
+          color var(--transition-speed) ease;
+        transform: translateY(1px);
+      }
+
+      /* Hover glow */
+      .nav-item-desktop:hover > .nav-link-desktop {
+        color: var(--text-color); /* Hover Text: White */
+        transform: none !important;
+        text-shadow: 0 0 8px var(--accent-color);
+      }
+
+      /* FIXED — No vertical movement */
+      .nav-item-desktop:hover > .nav-link-desktop {
+        color: var(--text-color); /* Hover Text: White */
+        text-shadow: 0 0 8px var(--accent-color);
+        transform: none;
+      }
+
+      .nav-item-desktop:hover > .nav-link-desktop::after {
+        color: var(--text-color); /* Hover Caret: White */
+        transform: rotate(180deg) translateY(1px);
+      }
+
+      /* Desktop Dropdown */
+      .dropdown-desktop {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+        background: var(--glass-bg);
+        backdrop-filter: blur(8px);
+        border-radius: 8px;
+        overflow: hidden;
+        min-width: 180px;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition: opacity var(--transition-speed) ease,
+          transform var(--transition-speed) ease;
+      }
+
+      .nav-item-desktop:hover > .dropdown-desktop {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      .dropdown-desktop a {
+        padding: 12px 20px;
+        display: block;
+        color: var(--clr-dark-text); /* Base color: Black */
+        transition: background var(--transition-speed) ease,
+          color var(--transition-speed) ease;
+      }
+
+      /* Gradient hover (Violet-themed) */
+      .dropdown-desktop a:hover {
+        background: linear-gradient(
+          135deg,
+          var(--accent-color),
+          var(--accent-light)
+        );
+        color: var(--text-color); /* Hover Text: White */
+      }
+      /* Desktop SHOP Button */
+      .shop-btn-desktop .shop-btn-link {
+        padding: 10px 18px;
+        font-weight: 700;
+        color: var(--clr-dark-text);
+        border-radius: 6px;
+        background: linear-gradient(135deg, #ff7a7a, #ff3d3d, #ff9a3c);
+        background-size: 200% 200%;
+        animation: shopBtnGradient 6s ease infinite;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      /* Hover effect */
+      .shop-btn-desktop .shop-btn-link:hover {
+        transform: scale(1.05);
+        box-shadow: var(--soft-shadow);
+      }
+
+      /* Button gradient animation */
+      @keyframes shopBtnGradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* ---------------- MOBILE NAV / HAMBURGER ---------------- */
+      .menu-toggle {
+        display: none;
+        width: 32px;
+        height: 32px;
+        position: relative;
+        margin-left: auto;
+        cursor: pointer;
+        z-index: 1010;
+        border: none;
+        background: none;
+        outline: none;
+      }
+
+      .menu-toggle-line {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        /* ❗ HAMBURGER LINE COLOR CHANGE */
+        background: var(--clr-hamburger-dark-blue);
+        border-radius: 2px;
+        transition: transform 0.35s ease, opacity 0.35s ease, top 0.35s ease;
+      }
+
+      .menu-toggle-line:nth-child(1) {
+        top: 6px;
+      }
+      .menu-toggle-line:nth-child(2) {
+        top: 14px;
+      }
+      .menu-toggle-line:nth-child(3) {
+        top: 22px;
+      }
+
+      .menu-toggle.open .menu-toggle-line:nth-child(1) {
+        transform: rotate(45deg);
+        top: 14px;
+      }
+      .menu-toggle.open .menu-toggle-line:nth-child(2) {
+        opacity: 0;
+      }
+      .menu-toggle.open .menu-toggle-line:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 14px;
+      }
+
+      /* ---------------- MOBILE MENU ---------------- */
+      .nav-mobile {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        /* ❗ MOBILE MENU BACKGROUND CHANGE: Solid White */
+        background: #ffffff;
+        background-size: 300% 300%;
+        /* Removed gradient animation as it is now solid color */
+
+        padding-top: 120px;
+        transform: translateY(-100%);
+        transition: transform 0.45s cubic-bezier(0.7, 0, 0.3, 1);
+        z-index: 999;
+        overflow-y: auto;
+      }
+
+      /* Removed @keyframes mobileGradient as it's no longer needed for a solid background */
+
+      .nav-mobile.open {
+        transform: translateY(0);
+      }
+
+      .nav-list-mobile {
+        list-style: none;
+        padding: 0 20px;
+      }
+
+      .nav-item-mobile {
+        /* Kept subtle violet border, but might need adjustment if it clashes with white */
+        border-bottom: 1px solid rgba(138, 43, 226, 0.4);
+      }
+
+      /* Base Mobile Link Color: Dark Gray */
+      .nav-link-mobile {
+        display: block;
+        padding: 15px 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--clr-mobile-dark-text); /* Base color: Dark Gray */
+        cursor: pointer;
+        transition: color var(--transition-speed) ease;
+      }
+
+      .nav-link-mobile:hover {
+        color: var(--accent-color); /* Hover Text: Violet Accent */
+        text-shadow: 0 0 10px rgba(138, 43, 226, 0.5); /* Adjusted shadow for light background */
+      }
+
+      /* Mobile dropdown arrow */
+      .dropdown-arrow {
+        display: inline-block;
+        margin-left: 8px;
+        border: solid var(--clr-mobile-dark-text); /* Dark arrow for white menu */
+        border-width: 0 2px 2px 0;
+        padding: 4px;
+        transform: rotate(45deg);
+        transition: transform var(--transition-speed) ease;
+      }
+
+      .dropdown-toggle.active .dropdown-arrow {
+        transform: rotate(135deg);
+      }
+
+      .dropdown-mobile {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+        padding-left: 0;
+      }
+
+      .dropdown-mobile.open {
+        max-height: 200px;
+        padding-bottom: 10px;
+      }
+
+      .dropdown-mobile a {
+        display: block;
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: var(--clr-mobile-dark-text); /* Base color: Dark Gray */
+        transition: color var(--transition-speed) ease,
+          background var(--transition-speed) ease;
+        border-radius: 4px;
+        margin-top: 5px;
+      }
+
+      .dropdown-mobile a:hover {
+        color: var(--accent-color); /* Hover Text: Violet Accent */
+        /* Using a subtle dark background hover for white menu */
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+      /* Mobile SHOP Button */
+      .shop-btn-mobile {
+        display: block;
+        padding: 15px 0;
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--clr-dark-text) !important; /* Base color: Black */
+
+        background: linear-gradient(135deg, #ff7a7a, #ff3d3d, #ff9a3c);
+        background-size: 200% 200%;
+        animation: shopBtnGradient 6s ease infinite;
+
+        text-align: center;
+        border-radius: 6px;
+        margin: 10px 0;
+      }
+
+      .shop-btn-mobile:hover {
+        box-shadow: var(--soft-shadow);
+        transform: scale(1.05);
+      }
+
+      /* Overlay for Mobile */
+      .overlay.open {
+        opacity: 1;
+        visibility: visible;
+        backdrop-filter: blur(4px);
+      }
+
+      /* Media Queries */
+      @media (max-width: 900px) {
+        .nav-links-desktop {
+          display: none;
+        }
+        .menu-toggle {
+          display: flex;
+        }
+      }
+
+      @media (min-width: 901px) {
+        .nav-links-desktop {
+          display: block;
+        }
+        .menu-toggle {
+          display: none;
+        }
+        .nav-mobile {
+          display: none;
+        }
+      }
+
+      /* Filter */
+      .filter-wrap {
+        background: #fff;
+        padding: 35px 30px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+      }
+      .filter-title {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        border-left: 4px solid #7ac142;
+        padding-left: 12px;
+      }
+      .filter-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+      .filter-group label {
+        font-size: 13px;
+        opacity: 0.7;
+      }
+      .filter-group select {
+        width: 100%;
+        margin-top: 6px;
+        padding: 12px;
+        border: none;
+        border-bottom: 2px solid #ccc;
+        font-size: 15px;
+      }
+      .find-btn {
+        background: #7ac142;
+        color: #fff;
+        border: none;
+        padding: 14px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      /* Sections */
+      .section {
+        padding: 60px 30px;
+        max-width: 1200px;
+        margin: auto;
+        display: none;
+      }
+      .section.active {
+        display: block;
+      }
+      .section h2 {
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+
+      /* Cards */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+      }
+      .card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 18px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        text-align: center;
+      }
+      .card img {
+        width: 100%;
+        height: 160px;
+        object-fit: contain;
+        margin-bottom: 15px;
+      }
+      .card h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+      .specs {
+        font-size: 14px;
+        opacity: 0.8;
+        margin-bottom: 15px;
+      }
+      .buy-btn {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 25px;
+        background: linear-gradient(135deg, #2563eb, #22c55e);
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      /* Footer Container */
+      .main-footer {
+        background-color: var(--footer-bg);
+        color: var(--text-light);
+        padding: 60px 0 0 0;
+        position: relative;
+        overflow: hidden;
+        opacity: 0; /* For JS fade-in */
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .main-footer.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      /* Responsive Grid Breakdown */
+      @media (min-width: 768px) {
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .footer-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      /* Logo Section */
+      .footer-logo-section img {
+        max-width: 180px;
+        height: auto;
+        margin-bottom: 15px;
+        /* Makes placeholder/logo white if needed */
+      }
+
+      .tagline {
+        font-size: 0.95rem;
+        color: var(--accent-green);
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      /* Common Heading Style */
+      .footer-heading {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-heading::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+        height: 3px;
+        background: var(--accent-green);
+        border-radius: 2px;
+      }
+
+      /* Quick Links */
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 12px;
+      }
+
+      .footer-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: var(--transition);
+        display: inline-block;
+      }
+
+      .footer-links a:hover {
+        color: var(--accent-green);
+        transform: translateX(5px);
+      }
+
+      /* Contact Section */
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .contact-item i {
+        color: var(--accent-green);
+        margin-top: 5px;
+        width: 20px;
+      }
+
+      .contact-item:hover {
+        color: var(--text-light);
+      }
+
+      .address-text {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      /* Social Media Icons */
+      .social-icons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .social-btn {
+        width: 45px;
+        height: 45px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: var(--transition);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .social-btn:hover {
+        transform: scale(1.15);
+        background: var(--primary-green);
+        box-shadow: 0 0 15px var(--accent-green);
+        color: white;
+      }
+
+      /* Bottom Bar */
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 25px 0;
+        text-align: center;
+        background: #051a11;
+      }
+
+      .maintainer-link {
+        text-decoration: none;
+        font-weight: 700;
+        display: inline-block;
+        background: linear-gradient(
+          to right,
+          #ff0000,
+          #ff7f00,
+          #ffff00,
+          #00ff00,
+          #0000ff,
+          #4b0082,
+          #8b00ff,
+          #ff0000
+        );
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: rainbow 3s linear infinite;
+      }
+
+      @keyframes rainbow {
+        to {
+          background-position: 200% center;
+        }
+      }
+
+      .copyright-text {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+
+      /* Mobile Adjustments */
+      @media (max-width: 480px) {
+        .main-footer {
+          padding-top: 40px;
+          text-align: center;
+        }
+
+        .footer-heading::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .contact-item {
+          justify-content: center;
+        }
+
+        .social-icons {
+          justify-content: center;
+        }
+
+        .footer-links a:hover {
+          transform: translateY(-3px);
+        }
+      }
+      /* Responsive */
+      @media (max-width: 1000px) {
+        .filter-grid {
+          grid-template-columns: 1fr;
+        }
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 600px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- <div class="breadcrumb">Home › Products › Choose Your Battery</div> -->
+    <header class="header">
+      <a href="./index.html" class="logo-link">
+        <div class="logo-img"><img src="./assets/LOGO.png" alt="" /></div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-links-desktop" aria-label="Main Navigation Desktop">
+        <ul class="nav-list-desktop">
+          <li class="nav-item-desktop">
+            <a href="./index.html" class="nav-link-desktop">HOME</a>
+            <!-- <ul class="dropdown-desktop">
+              <li><a href="./index.html">HOME1</a></li>
+            </ul> -->
+          </li>
+          <li class="nav-item-desktop">
+            <a href="./product.html" class="nav-link-desktop">PRODUCTS</a>
+          </li>
+          <li class="nav-item-desktop">
+            <a href="./service.html" class="nav-link-desktop">SERVICES</a>
+          </li>
+
+          <li class="nav-item-desktop">
+            <a href="./about.html" class="nav-link-desktop">ABOUT US</a>
+          </li>
+          <li class="nav-item-desktop">
+            <a href="./faq.html" class="nav-link-desktop">FAQs</a>
+          </li>
+          <li class="nav-item-desktop shop-btn-desktop">
+            <a href="./contact2.html" class="shop-btn-link">CONTACT</a>
+          </li>
+          <li class="nav-item-desktop shop-btn-desktop">
+            <a href="./shop.html" class="shop-btn-link">SHOP</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button
+        class="menu-toggle"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        aria-label="Toggle Navigation"
+      >
+        <span class="menu-toggle-line"></span>
+        <span class="menu-toggle-line"></span>
+        <span class="menu-toggle-line"></span>
+      </button>
+    </header>
+    <!-- Mobile Slide-in Navigation -->
+    <nav id="mobile-menu" class="nav-mobile" aria-label="Mobile Navigation">
+      <ul class="nav-list-mobile">
+        <li class="nav-item-mobile">
+          <a
+            class="nav-link-mobile dropdown-toggle"
+            data-dropdown="home-dropdown"
+            role="button"
+            aria-expanded="false"
+            aria-controls="home-dropdown"
+            href="./index.html"
+          >
+            HOME
+            <!-- <span class="dropdown-arrow"></span> -->
+          </a>
+          <!-- <ul id="home-dropdown" class="dropdown-mobile">
+            <li><a href="./index.html">HOME1</a></li>
+          </ul> -->
+        </li>
+
+        <li class="nav-item-mobile">
+          <a href="./product.html" class="nav-link-mobile">PRODUCTS</a>
+        </li>
+
+        <li class="nav-item-mobile">
+          <a href="./service.html" class="nav-link-mobile">SERVICES</a>
+        </li>
+
+        <li class="nav-item-mobile">
+          <a href="./about.html" class="nav-link-mobile">ABOUT US</a>
+        </li>
+
+        <li class="nav-item-mobile">
+          <a href="./faq.html" class="nav-link-mobile">FAQs</a>
+        </li>
+        <li class="nav-item-mobile">
+          <a href="./contact2.html" class="shop-btn-mobile">CONTACT</a>
+        </li>
+        <li class="nav-item-mobile">
+          <a href="./shop.html" class="shop-btn-mobile">SHOP</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Overlay for closing the mobile menu -->
+    <div class="overlay"></div>
+    <!-- FILTER -->
+    <div class="filter-wrap">
+      <div class="filter-title">CHOOSE YOUR BATTERY</div>
+      <div class="filter-grid">
+        <div class="filter-group">
+          <label>Vehicle</label>
+          <select id="vehicle">
+            <option value="">Select</option>
+            <option value="bike">Two Wheelers</option>
+            <option value="car">Passenger Cars</option>
+            <option value="ups">UPS / Inverter</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Brand</label>
+          <select id="brand">
+            <option value="">Select Brand</option>
+            <option value="amaron">Amaron</option>
+            <option value="exide">Exide</option>
+            <option value="luminous">Luminous</option>
+            <option value="okaya">Okaya</option>
+          </select>
+        </div>
+        <button class="find-btn" onclick="findBattery()">FIND NOW</button>
+      </div>
+    </div>
+
+    <!-- ================= BIKE AMARON (10) ================= -->
+    <section class="section bike amaron">
+      <h2>Amaron Two Wheeler Batteries</h2>
+
+      <div class="grid">
+        <div class="card">
+          <img src="a2.5.webp" />
+          <h3>Amaron Pro Rider 2.5Ah</h3>
+          <div class="specs">2.5V • VRLA • Maintenance Free</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="a5h.webp" />
+          <h3>Amaron Pro Rider 5Ah</h3>
+          <div class="specs">Quick Start • Spill Proof</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="a7lb.jpg" />
+          <h3>Amaron Pro Rider 7Ah</h3>
+          <div class="specs">High Cranking Power • Long Life</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="a9lbwebp.webp" />
+          <h3>Amaron Alpha 9Ah</h3>
+          <div class="specs">OEM Grade • Vibration Resistant</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="a12h.webp" />
+          <h3>Amaron Alpha 12Ah</h3>
+          <div class="specs">Fast Charging • Durable Build</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BIKE EXIDE (10) ================= -->
+    <section class="section bike exide">
+      <h2>Exide Two Wheeler Batteries</h2>
+
+      <div class="grid">
+        <div class="card">
+          <img src="EXIDE-XPLORE-XLTZ-5-Battery-1200x675.jpg" />
+          <h3>Exide Xplore 2.5Ah</h3>
+          <div class="specs">12V • VRLA • Maintenance Free</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="e5.jpg" />
+          <h3>Exide Xplore 5Ah</h3>
+          <div class="specs">Quick Start • Spill Proof</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="e7.jpg" />
+          <h3>Exide Xplore 7Ah</h3>
+          <div class="specs">High Cranking Power • Long Life</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="e12.png" />
+          <h3>Exide Bikez 9Ah</h3>
+          <div class="specs">OEM Grade • Vibration Resistant</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="12XL9-B.jpg" />
+          <h3>Exide Bikez 12Ah</h3>
+          <div class="specs">Fast Charging • Durable Build</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CAR AMARON (10) ================= -->
+    <section class="section car amaron">
+      <h2>Amaron Car Batteries</h2>
+
+      <div class="grid">
+        <div class="card">
+          <img src="a35.jfif" />
+          <h3>Amaron FLO 35Ah</h3>
+          <div class="specs">Maintenance Free • High Cranking Power</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="a40.jpg" />
+          <h3>Amaron FLO 40Ah</h3>
+          <div class="specs">Quick Start • Heat Resistant Design</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="a45.jpg" />
+          <h3>Amaron FLO 45Ah</h3>
+          <div class="specs">Long Service Life • Factory Charged</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="a55.webp" />
+          <h3>Amaron FLO 50Ah</h3>
+          <div class="specs">High Reserve Capacity • Spill Proof</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="a55.png" />
+          <h3>Amaron FLO 55Ah</h3>
+          <div class="specs">OEM Grade • Vibration Resistant</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="a60.jpg" />
+          <h3>Amaron FLO 60Ah</h3>
+          <div class="specs">High Power Output • Low Self-Discharge</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="a65.jfif" />
+          <h3>Amaron FLO 65Ah</h3>
+          <div class="specs">Strong CCA • Long Warranty Support</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="a75.webp" />
+          <h3>Amaron GO 70Ah</h3>
+          <div class="specs">Heavy Duty • Fast Recharge</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="a75.jfif" />
+          <h3>Amaron GO 75Ah</h3>
+          <div class="specs">Extended Backup • Premium Series</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="a80.webp" />
+          <h3>Amaron GO 80Ah</h3>
+          <div class="specs">High Capacity • Commercial Use</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+        <div class="card">
+          <img src="a85.jfif" />
+          <h3>Amaron GO 85Ah</h3>
+          <div class="specs">High Capacity • Commercial Use</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CAR EXIDE (10) ================= -->
+    <section class="section car exide">
+      <h2>Exide Car Batteries</h2>
+
+      <div class="grid">
+        <div class="card">
+          <img src="e40.jpg" />
+          <h3>Exide Matrix 35Ah</h3>
+          <div class="specs">VRLA • Spill Proof • Maintenance Free</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="e40.jpg" />
+          <h3>Exide Matrix 40Ah</h3>
+          <div class="specs">High Cranking Power • Heat Resistant</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="e45.jpg" />
+          <h3>Exide Matrix 45Ah</h3>
+          <div class="specs">Quick Start • Long Life Design</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="e50.png" />
+          <h3>Exide Matrix 50Ah</h3>
+          <div class="specs">VRLA • Spill Proof • Factory Charged</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="e55.png" />
+          <h3>Exide Matrix 55Ah</h3>
+          <div class="specs">High Reserve Capacity • Durable Grid</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="e60.webp" />
+          <h3>Exide Matrix 60Ah</h3>
+          <div class="specs">Maintenance Free • Strong CCA</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="e65.jpg" />
+          <h3>Exide Matrix 65Ah</h3>
+          <div class="specs">High Performance • Vibration Resistant</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="e75.jpg" />
+          <h3>Exide Matrix 70Ah</h3>
+          <div class="specs">Fast Recharge • Heavy Duty Build</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="e75.webp" />
+          <h3>Exide Matrix 75Ah</h3>
+          <div class="specs">Extended Backup • Premium Series</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="e80.jpg" />
+          <h3>Exide Matrix 80Ah</h3>
+          <div class="specs">OEM Grade • Long Warranty Support</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+        <div class="card">
+          <img src="E85.jpg" />
+          <h3>Exide Matrix 85Ah</h3>
+          <div class="specs">OEM Grade • Long Warranty Support</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= UPS AMARON ================= -->
+    <section class="section ups amaron">
+      <h2>Amaron UPS Batteries</h2>
+
+      <div class="grid">
+        <div class="card">
+          <img src="100ah amaron.png" />
+          <h3>Amaron Current 100Ah</h3>
+          <div class="specs">Tall Tubular • Long Backup • Low Maintenance</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="Amaron battery 150.png" />
+          <h3>Amaron Current 150Ah</h3>
+          <div class="specs">Deep Cycle • Fast Recharge • Heavy Duty</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="200ah amaron.jpg" />
+          <h3>Amaron Current 200Ah</h3>
+          <div class="specs">Extra Long Backup • Commercial Grade</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= UPS EXIDE ================= -->
+    <section class="section ups exide">
+      <h2>Exide UPS Batteries</h2>
+
+      <div class="grid">
+        <div class="card">
+          <img src="exide 150.jfif" />
+          <h3>Exide Inva Tubular 100Ah</h3>
+          <div class="specs">Tall Tubular • Long Backup • Low Maintenance</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="exide 150.webp" />
+          <h3>Exide Inva Tubular 150Ah</h3>
+          <div class="specs">Deep Cycle • Fast Recharge • Home Use</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="exide 200.jfif" />
+          <h3>Exide Inva Master 200Ah</h3>
+          <div class="specs">Extra Long Backup • Heavy Duty</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= UPS LUMINOUS ================= -->
+    <section class="section ups luminous">
+      <h2>Luminous UPS Batteries</h2>
+
+      <div class="grid">
+        <div class="card">
+          <img src="lumnous 100.jpg" />
+          <h3>Luminous Tall Tubular 100Ah</h3>
+          <div class="specs">High Backup • Fast Charging • Home Use</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="luminous 150.webp" />
+          <h3>Luminous Tall Tubular 150Ah</h3>
+          <div class="specs">Durable Plates • Low Water Loss</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="lumionous 200.jpg" />
+          <h3>Luminous Tall Tubular 200Ah</h3>
+          <div class="specs">Long Life • Heavy Duty • High Efficiency</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= UPS OKAYA ================= -->
+    <section class="section ups okaya">
+      <h2>Okaya UPS Batteries</h2>
+
+      <div class="grid">
+        <div class="card">
+          <img src="oakaya 100.jpg" />
+          <h3>Okaya Power Tubular 100Ah</h3>
+          <div class="specs">Heavy Duty • Long Backup • Home Use</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="okaya150.jpg" />
+          <h3>Okaya Power Tubular 150Ah</h3>
+          <div class="specs">Fast Recharge • Durable Plates</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+
+        <div class="card">
+          <img src="okaya 200.avif" />
+          <h3>Okaya Power Tubular 200Ah</h3>
+          <div class="specs">Extra Long Backup • Commercial Grade</div>
+          <a href="https://wa.me/918748826374">
+            <button class="buy-btn">Enquiry Now</button></a
+          >
+        </div>
+      </div>
+    </section>
+    <footer class="main-footer" id="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- 1. Logo & Tagline -->
+          <div class="footer-logo-section">
+            <!-- Placeholder for logo -->
+            <img
+              src="./assets/LOGO.png"
+              alt="SVS Batteries Logo"
+              onerror="this.src='https://placehold.co/200x80/198754/FFFFFF?text=SVS+BATTERIES'"
+            />
+            <p class="tagline">Reliable Battery Sales & Services</p>
+          </div>
+
+          <!-- 2. Quick Links -->
+          <div class="footer-links-section">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="./index.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> Home</a
+                >
+              </li>
+              <li>
+                <a href="./product.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> Products</a
+                >
+              </li>
+              <li>
+                <a href="./service.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> Services</a
+                >
+              </li>
+              <li>
+                <a href="./about.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> About Us</a
+                >
+              </li>
+              <li>
+                <a href="./faq.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> FAQs</a
+                >
+              </li>
+              <li>
+                <a href="./contact2.html"
+                  ><i class="fas fa-chevron-right fa-xs mr-2"></i> Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- 3. Contact & Address -->
+          <div class="footer-contact-section">
+            <h3 class="footer-heading">Contact Us</h3>
+            <div class="contact-info">
+              <div
+                class="contact-item"
+                style="font-weight: bold; color: var(--text-light)"
+              >
+                SVS BATTERIES
+              </div>
+              <a href="mailto:prathapae1997@gmail.com" class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span class="address-text">prathapae1997@gmail.com</span>
+              </a>
+              <a href="tel:+918748826374" class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span class="address-text">+91 8748826374</span>
+              </a>
+              <a href="tel:+918549837988" class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span class="address-text">+91 8549837988</span>
+              </a>
+              <div class="contact-item">
+                <i class="fas fa-location-dot"></i>
+                <span class="address-text">
+                  #1028/A, 14th Main, Near Maruthi Circle,<br />
+                  Hanumanthanagar, Bengaluru – 560050
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Social Media -->
+          <div class="footer-social-section">
+            <h3 class="footer-heading">Follow Us</h3>
+            <div class="social-icons">
+              <a
+                href="https://www.facebook.com/share/1B6p9JFNrp/?mibextid=wwXIfr"
+                class="social-btn"
+                aria-label="Facebook"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://wa.me/918748826374"
+                class="social-btn"
+                aria-label="WhatsApp"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/svs_batteries/?igsh=MXY3cjUwNjYxNDdqNg%3D%3D&utm_source=qr#"
+                class="social-btn"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.youtube.com/@svsbatteries"
+                class="social-btn"
+                aria-label="YouTube"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Footer Bar -->
+      <div class="footer-bottom">
+        <div class="container">
+          <p class="copyright-text">
+            &copy; <span id="year"></span> SVS Batteries. All Rights Reserved. |
+            Designed & Maintained by
+            <a
+              href="https://www.arouza.com"
+              target="_blank"
+              class="maintainer-link"
+              >AROUZA TECHLABS</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="./nav2.js"></script>
+    <script src="./footer2.js"></script>
+    <!-- SCRIPT -->
+    <script>
+      function findBattery() {
+        const v = document.getElementById("vehicle").value;
+        const b = document.getElementById("brand").value;
+        document
+          .querySelectorAll(".section")
+          .forEach((s) => s.classList.remove("active"));
+        if (v && b) {
+          document
+            .querySelectorAll(`.${v}.${b}`)
+            .forEach((s) => s.classList.add("active"));
+        }
+      }
+    </script>
+  </body>
+</html>
